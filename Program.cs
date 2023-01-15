@@ -697,7 +697,7 @@
                                     moneyInput = decimal.Parse(Console.ReadLine());
                                     if (moneyInput > Account1)
                                     {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account1);
+                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2} kr", Account1);
                                         Console.ReadKey();
                                     }
                                     else
@@ -707,7 +707,8 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
+                                        Console.WriteLine("Överföring Klar, Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings1, Account1);
+                                        Console.WriteLine("Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
                                     }
@@ -743,6 +744,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings2, Account2);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -766,6 +768,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation2, Account2);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -801,6 +804,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings3, Account3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -819,11 +823,12 @@
                                     }
                                     else
                                     {
-                                        Account3 = Account3 - moneyInput; Savings3 = Savings3 + moneyInput;
+                                        Account3 = Account3 - moneyInput; Vacation3 = Vacation3 + moneyInput;
                                         Console.WriteLine("Överför");
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation3, Account3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -847,6 +852,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food3, Account3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -883,6 +889,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, Account4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -907,6 +914,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, Account4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -930,6 +938,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food4, Account4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -952,6 +961,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Gitarrkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, GuitarAccount4, Account4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -990,6 +1000,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings5, Account5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1008,11 +1019,12 @@
                                     }
                                     else
                                     {
-                                        Account5 = Account5 - moneyInput; Savings5 = Savings5 + moneyInput;
+                                        Account5 = Account5 - moneyInput; Vacation5 = Vacation5 + moneyInput;
                                         Console.WriteLine("Överför");
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Account5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1036,13 +1048,14 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food5, Account5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
                                     }
                                     break;
                                 case "4":
-                                    Console.WriteLine("Privatkonto > Matkonto");
+                                    Console.WriteLine("Privatkonto > Garnkonto");
                                     Console.WriteLine("Välj Belopp");
                                     Console.Write("===>");
                                     moneyInput = decimal.Parse(Console.ReadLine());
@@ -1058,6 +1071,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(500);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Garnkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Yarn5, Account5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1095,6 +1109,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account1, Savings1);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1134,6 +1149,7 @@
                                     Thread.Sleep(500);
                                     Console.WriteLine(". . .");
                                     Thread.Sleep(1000);
+                                    Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account2, Savings2);
                                     Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                     Console.ReadKey();
                                     FirstMenu();
@@ -1156,6 +1172,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation2, Savings2);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1197,6 +1214,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account3, Savings3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1220,13 +1238,14 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation3, Savings3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
                                     }
                                     break;
                                 case "3":
-                                    Console.WriteLine("SparKonto > Semesterkonto");
+                                    Console.WriteLine("SparKonto > Matkonto");
                                     Console.WriteLine("Välj Belopp");
                                     Console.Write("===>");
                                     moneyInput = decimal.Parse(Console.ReadLine());
@@ -1242,6 +1261,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food3, Savings3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1283,6 +1303,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account4, Savings4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1306,13 +1327,14 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation4, Savings4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
                                     }
                                     break;
                                 case "3":
-                                    Console.WriteLine("SparKonto > Semesterkonto");
+                                    Console.WriteLine("SparKonto > Matkonto");
                                     Console.WriteLine("Välj Belopp");
                                     Console.Write("===>");
                                     moneyInput = decimal.Parse(Console.ReadLine());
@@ -1328,6 +1350,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food4, Savings4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1350,6 +1373,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Gitarrkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, GuitarAccount4, Savings4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1364,7 +1388,7 @@
                             Console.WriteLine("1. Privatkonto");
                             Console.WriteLine("2. Semesterkonto");
                             Console.WriteLine("3. Matkonto");
-                            Console.WriteLine("4. Gitarrkonto");
+                            Console.WriteLine("4. Garnkonto");
 
                             string input = Console.ReadLine();
                             decimal moneyInput;
@@ -1388,6 +1412,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account5, Savings5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1411,13 +1436,14 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Savings5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
                                     }
                                     break;
                                 case "3":
-                                    Console.WriteLine("SparKonto > Semesterkonto");
+                                    Console.WriteLine("SparKonto > Matkonto");
                                     Console.WriteLine("Välj Belopp");
                                     Console.Write("===>");
                                     moneyInput = decimal.Parse(Console.ReadLine());
@@ -1433,6 +1459,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt MAtkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food5, Savings5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1455,6 +1482,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Yarn5, Savings5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1496,7 +1524,10 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account2, Vacation2);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
+                                        Console.ReadKey();
+                                        FirstMenu();
                                     }
                                     break;
                                 case "2":
@@ -1516,7 +1547,10 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings2, Vacation2);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
+                                        Console.ReadKey();
+                                        FirstMenu();
                                     }
                                     break;
 
@@ -1550,6 +1584,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account3, Vacation3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1572,6 +1607,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings3, Vacation3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1594,6 +1630,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food3, Vacation3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1633,6 +1670,8 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account4, Vacation4);
+
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1655,6 +1694,8 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, Vacation4);
+
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1677,6 +1718,8 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food4, Vacation4);
+
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1699,6 +1742,8 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Gitarrkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, GuitarAccount4, Vacation4);
+
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1736,6 +1781,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account5, Vacation5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1758,6 +1804,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings5, Vacation5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1780,6 +1827,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food5, Vacation5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1802,6 +1850,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Garnkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Yarn5, Vacation5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1843,6 +1892,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account3, Food3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1865,6 +1915,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings3, Food3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1887,6 +1938,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation3, Food3);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1923,6 +1975,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account4, Food4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1945,6 +1998,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, Food4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1967,6 +2021,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation4, Food4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -1989,6 +2044,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Gitarrkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, GuitarAccount4, Food4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -2026,6 +2082,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account5, Food5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -2048,6 +2105,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings5, Food5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -2070,6 +2128,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Food5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -2092,6 +2151,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Yarn5, Food5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -2116,7 +2176,7 @@
                             switch (input)
                             {
                                 case "1":
-                                    Console.WriteLine("Matkonto > Privatkonto");
+                                    Console.WriteLine("Gitarrkonto > Privatkonto");
                                     Console.WriteLine("Välj Belopp");
                                     Console.Write("===>");
                                     moneyInput = decimal.Parse(Console.ReadLine());
@@ -2132,6 +2192,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account4, GuitarAccount4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -2154,6 +2215,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, GuitarAccount4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -2176,6 +2238,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation4, GuitarAccount4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -2198,6 +2261,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food4, GuitarAccount4);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
@@ -2234,13 +2298,14 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account5, Yarn5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
                                     }
                                     break;
                                 case "2":
-                                    Console.WriteLine("Gitarrkonto > Sparkonto");
+                                    Console.WriteLine("Garnkonto > Sparkonto");
                                     Console.WriteLine("Välj Belopp");
                                     Console.Write("===>");
                                     moneyInput = decimal.Parse(Console.ReadLine());
@@ -2256,13 +2321,14 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings5, Yarn5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
                                     }
                                     break;
                                 case "3":
-                                    Console.WriteLine("Matkonto > Semesterkonto");
+                                    Console.WriteLine("Garnkonto > Semesterkonto");
                                     Console.WriteLine("Välj Belopp");
                                     Console.Write("===>");
                                     moneyInput = decimal.Parse(Console.ReadLine());
@@ -2278,13 +2344,14 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Yarn5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
                                     }
                                     break;
                                 case "4":
-                                    Console.WriteLine("Matkonto > Matkonto");
+                                    Console.WriteLine("Garnkonto > Matkonto");
                                     Console.WriteLine("Välj Belopp");
                                     Console.Write("===>");
                                     moneyInput = decimal.Parse(Console.ReadLine());
@@ -2300,6 +2367,7 @@
                                         Thread.Sleep(500);
                                         Console.WriteLine(". . .");
                                         Thread.Sleep(1000);
+                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Yarn5);
                                         Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
                                         Console.ReadKey();
                                         FirstMenu();
