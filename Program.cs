@@ -424,7 +424,7 @@
                         {
                             Console.Clear();
 
-                            Console.WriteLine(Savings1 + " Kr");
+                            Console.WriteLine("{0:N2 Kr ", Savings1);
                             Console.ReadKey();
                         }
                         else if (Login == 1)
@@ -2910,7 +2910,7 @@
                                 {
                                     if (pin == password[Login])
                                     {
-                                        Savings3 = Savings3 - moneyInput;
+                                        Vacation3 = Vacation3 - moneyInput;
                                         isTrue = false;
                                         Console.WriteLine("Överför");
                                         Thread.Sleep(1000);
