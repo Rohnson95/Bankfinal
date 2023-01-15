@@ -10,7 +10,7 @@
     }
     internal class Menu
     {
-        protected int login;
+        protected int login; //This is used to store the index of the person logged in
 
         public int Login
         {
@@ -18,6 +18,7 @@
             set { login = value; }
 
         }
+        //Contains Every accounts funds using get;set. I realised pretty late that a smarter solution would be to store all values in a jagged array instead
         #region Accounts
         /* Roberts Account */
         protected decimal account1 = 25000;
@@ -142,7 +143,7 @@
             get { return yarn5; }
             set { yarn5 = value; }
         }
-        #endregion
+        #endregion //
 
 
         public void AccountChecker()
@@ -175,75 +176,7 @@
                     }
                 }
             }
-            /*do
-            {
-                Console.Clear();
-                for (int i = 0; i < mainMenu.Length; i++)
-                {
-                    if (i == index)
-                    {
-                        Console.Write("->");
-                        Console.ForegroundColor = ConsoleColor.Green;
-                    }
-                    else
-                    {
-                        Console.ResetColor();
-                    }
-
-                    Console.WriteLine(mainMenu[i]);
-                }
-                index = input(index);
-            } while (selection);
-
-            int input(int index)
-            {
-                ConsoleKey keypressed = Console.ReadKey().Key;
-
-                if (keypressed == ConsoleKey.DownArrow)
-                {
-                    index += 1;
-                }
-                else if (keypressed == ConsoleKey.UpArrow)
-                {
-                    index -= 1;
-                }
-                else if (keypressed == ConsoleKey.Enter)
-                {
-                    if (index == 0)
-                    {
-                        UserAccount();
-                    }
-                    else if (index == 1)
-                    {
-                        Transfers();
-                    }
-                    else if (index == 2)
-                    {
-                        Console.Clear();
-                        Withdraw();
-                    }
-                    else if (index == 3)
-                    {
-                        Environment.Exit(0);
-                    }
-                }
-                else if (keypressed == ConsoleKey.A)
-                {
-                    Console.Clear();
-                    Environment.Exit(0);
-                }
-
-                if (index <= -1)
-                {
-                    index = 0;
-                }
-                else if (index > 3)
-                {
-                    index = 3;
-                }
-                return index;
-            }*/
-        }
+        } //Does a crossreference to the strings within the arrays to check if the login is correct
         public void FirstMenu()
         {
             string[] mainMenu = { "1. Se över dina konton och saldo", "2. Överföring mellan konton", "3. Ta ut pengar" };
@@ -326,14 +259,10 @@
                 return index;
             }
 
-        }
-        public void UserAccount()
+        } //This is the mainmenu, here's where you navigate through what you want to do in the bank 
+        public void UserAccount() //Using jagged arrays to display the accounts and funds available for the account that is currently logged in. Here is where the get;set for login plays a big part.
         {
-            string[] robAccountMenu = { "1. PrivatKonto", "2. Sparkonto", "3. Logga Ut", "4. Avsluta" };
-
             int index = 0;
-            decimal[] mainAccount = { 25000, 50000 };
-            decimal[] savings = { 101000, 125000 };
             bool selection = true;
 
 
@@ -564,7 +493,7 @@
         }
         public void Transfers()
         {
-            string[] menu = { "1. Överför mellan konton", "2. Överför Till Annan Användare" };
+            string[] menu = { "1. Överför mellan konton" };
             bool selection = true;
             int index = 0;
             do
@@ -585,6 +514,7 @@
                     Console.WriteLine(menu[i]);
 
                 }
+                Console.ResetColor();
                 Console.WriteLine("Tryck [←] för att gå tillbaka");
                 index = input(index);
             } while (selection);
@@ -624,14 +554,14 @@
                 {
                     index = 0;
                 }
-                else if (index > 1)
+                else if (index > 0)
                 {
-                    index = 1;
+                    index = 0;
                 }
                 return index;
 
             }
-        }
+        } //I made a menu for this even though there's only one option currently, this is because I had the plan to have transfers available between the users of the bank. I realised that i needed to change the entire program for this
         public void TransferToSelf()
         {
             bool selection = true;
@@ -2392,7 +2322,7 @@
                 }
                 return index;
             }
-        }
+        } //Manages the actual transfers and removal of funds from one account and adding funds to a second one. 
 
         public void TransferToOthers()
         {
@@ -3245,12 +3175,12 @@
                 }
                 return index;
             }
-        }
+        } //Withdraws funds from a selected account
     }
 }
 public class Assets
 {
-    protected static string[][] accounts = new string[][]
+    protected static string[][] accounts = new string[][] // I use a jagged array to more easily print different options depending on the account logged in, This is done by having the index connected to a get;set; 
     {
             new string[] { "1. PrivatKonto", "2. Sparkonto" },
             new string[] { "1. PrivatKonto", "2. Sparkonto", "3. Semesterkonto" },
