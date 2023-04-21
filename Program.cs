@@ -16,144 +16,14 @@
         {
             get { return login; }
             set { login = value; }
-
         }
         //Contains Every accounts funds using get;set. I realised pretty late that a smarter solution would be to store all values in a jagged array instead
-        #region Accounts
-        /* Roberts Account */
-        protected decimal account1 = 25000;
-        public decimal Account1
-        {
-
-            get { return account1; }
-            set { account1 = value; }
-        }
-        protected decimal savings1 = 101000;
-        public decimal Savings1
-        {
-            get { return savings1; }
-            set { savings1 = value; }
-        }
-        /* Williams Account */
-        protected decimal account2 = 50000;
-        public decimal Account2
-        {
-            get { return account2; }
-            set { account2 = value; }
-
-        }
-
-        protected decimal savings2 = 125000;
-        public decimal Savings2
-        {
-            get { return savings2; }
-            set { savings2 = value; }
-        }
-        protected decimal vacation2 = 33000;
-        public decimal Vacation2
-        {
-            get { return vacation2; }
-            set { vacation2 = value; }
-        }
-        /* Marias Account */
-        protected decimal account3 = 35000;
-        public decimal Account3
-        {
-            get { return account3; }
-            set { account3 = value; }
-        }
-        protected decimal savings3 = 200000;
-        public decimal Savings3
-        {
-            get { return savings3; }
-            set { savings3 = value; }
-        }
-        protected decimal vacation3 = 45000;
-        public decimal Vacation3
-        {
-            get { return vacation3; }
-            set { vacation3 = value; }
-        }
-        protected decimal food3 = 2500;
-        public decimal Food3
-        {
-            get { return food3; }
-            set { food3 = value; }
-        }
-        // Neils Account
-        protected decimal account4 = 65000;
-        public decimal Account4
-        {
-            get { return account4; }
-            set { account4 = value; }
-        }
-        protected decimal savings4 = 250000;
-        public decimal Savings4
-        {
-            get { return savings4; }
-            set { savings4 = value; }
-        }
-        protected decimal vacation4 = 56000;
-        public decimal Vacation4
-        {
-            get { return vacation4; }
-            set { vacation4 = value; }
-        }
-        protected decimal food4 = 3000;
-        public decimal Food4
-        {
-            get { return food4; }
-            set { food4 = value; }
-        }
-        protected decimal guitarAccount4 = 4000;
-        public decimal GuitarAccount4
-        {
-            get { return guitarAccount4; }
-            set { guitarAccount4 = value; }
-        }
-        //Christinas Account
-        protected decimal account5 = 85000;
-        public decimal Account5
-        {
-            get { return account5; }
-            set { account5 = value; }
-        }
-        protected decimal savings5 = 123000;
-        public decimal Savings5
-        {
-            get { return savings5; }
-            set { savings5 = value; }
-
-        }
-        protected decimal vacation5 = 48000;
-        public decimal Vacation5
-        {
-            get { return vacation5; }
-            set { vacation5 = value; }
-        }
-        protected decimal food5 = 1000;
-        public decimal Food5
-        {
-            get { return food5; }
-            set { food5 = value; }
-        }
-        protected decimal yarn5 = 1500;
-        public decimal Yarn5
-        {
-            get { return yarn5; }
-            set { yarn5 = value; }
-        }
-        #endregion //
-
 
         public void AccountChecker()
         {
-
             string[] user = { "ROBERT", "WILLIAM", "MARIA", "NEIL", "CHRISTINA" };
             string[] password = { "1234", "5678", "8135", "5411", "2411" };
-            bool selection = true;
             bool isTrue = true;
-            int index = 0;
             Console.WriteLine("Welcome to ChasBank, To log in - Press Enter");
             Console.ReadKey();
             while (isTrue)
@@ -172,7 +42,6 @@
                         isTrue = false;
                         Login = i;
                         FirstMenu();
-
                     }
                 }
             }
@@ -264,11 +133,8 @@
         {
             int index = 0;
             bool selection = true;
-
-
             do
             {
-
                 Console.Clear();
                 for (int i = 0; i < Assets.Accounts[Login].Length; i++)
                 {
@@ -282,13 +148,9 @@
                         Console.ResetColor();
                     }
                     Console.WriteLine(Assets.Accounts[Login][i]);
-
-
                 }
                 Console.ResetColor();
                 Console.WriteLine("Gå Tillbaka [←] Logga ut [L]  Avsluta [A]");
-
-
                 index = input(index);
             } while (selection);
 
@@ -308,159 +170,33 @@
                 {
                     if (index == 0)
                     {
-                        if (Login == 0)
-                        {
-
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Account1);
-                            Console.ReadKey();
-
-
-                            Console.ReadKey();
-                        }
-                        else if (Login == 1)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("{0:N2} Kr", Account2);
-                            Console.ReadKey();
-
-                        }
-                        else if (Login == 2)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Account3);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Account4);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("{0:N2} Kr", Account5);
-                            Console.ReadKey();
-                        }
+                        Console.Clear();
+                        Console.WriteLine("{0:N2} Kr", Assets.Funds[Login][0]);
+                        Console.ReadKey();
                     }
                     else if (index == 1)
                     {
-                        if (Login == 0)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2 Kr ", Savings1);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 1)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Savings2);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 2)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Savings3);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Savings4);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Savings5);
-                            Console.ReadKey();
-                        }
+                        Console.Clear();
+                        Console.WriteLine("{0:N2} Kr", Assets.Funds[Login][1]);
+                        Console.ReadKey();
                     }
                     else if (index == 2)
                     {
-                        if (Login == 1)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Vacation2);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 2)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Vacation3);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Vacation4);
-                            Console.ReadKey();
-                        }
-                        else if (login == 4)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Vacation5);
-                            Console.ReadKey();
-                        }
+                        Console.Clear();
+                        Console.WriteLine("{0:N2} Kr", Assets.Funds[Login][2]);
+                        Console.ReadKey();
                     }
                     else if (index == 3)
                     {
-                        if (Login == 2)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Food3);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Food4);
-                            Console.ReadKey();
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-
-                            Console.WriteLine("{0:N2} Kr", Food5);
-                            Console.ReadKey();
-                        }
+                        Console.Clear();
+                        Console.WriteLine("{0:N2} Kr", Assets.Funds[Login][3]);
+                        Console.ReadKey();
                     }
                     else if (index == 4)
                     {
-                        if (Login == 3)
-                        {
-                            {
-                                Console.Clear();
-
-                                Console.WriteLine("{0:N2} Kr", GuitarAccount4);
-                                Console.ReadKey();
-                            }
-                        }
-                        else if (Login == 4)
-                        {
-                            {
-                                Console.Clear();
-
-                                Console.WriteLine("{0:N2} Kr", Yarn5);
-                                Console.ReadKey();
-                            }
-                        }
-
+                        Console.Clear();
+                        Console.WriteLine("{0:N2} Kr", Assets.Funds[Login][4]);
+                        Console.ReadKey();
                     }
 
                 }
@@ -488,7 +224,6 @@
                     index = Assets.Accounts[Login].Length - 1;
                 }
                 return index;
-
             }
         }
         public void Transfers()
@@ -498,7 +233,6 @@
             int index = 0;
             do
             {
-
                 Console.Clear();
                 for (int i = 0; i < menu.Length; i++)
                 {
@@ -512,7 +246,6 @@
                         Console.ResetColor();
                     }
                     Console.WriteLine(menu[i]);
-
                 }
                 Console.ResetColor();
                 Console.WriteLine("Tryck [←] för att gå tillbaka");
@@ -541,9 +274,8 @@
                     else if (index == 1)
                     {
                         Console.Clear();
-                        TransferToOthers();
-                    }
 
+                    }
                 }
                 else if (keypressed == ConsoleKey.Backspace)
                 {
@@ -566,11 +298,8 @@
         {
             bool selection = true;
             int index = 0;
-
-
             do
             {
-
                 Console.Clear();
                 Console.WriteLine("Vilket Konto vill du överföra från?");
                 for (int i = 0; i < Assets.Accounts[Login].Length; i++)
@@ -586,7 +315,6 @@
                     }
 
                     Console.WriteLine(Assets.Accounts[Login][i]);
-
                 }
                 Console.ResetColor();
                 index = input(index);
@@ -607,1709 +335,343 @@
                 {
                     if (index == 0)
                     {
-                        if (Login == 0)
+                        Console.WriteLine("Välj ett konto att överföra till:");
+                        for (int i = 1; i < Assets.Accounts[Login].Length; i++)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Sparkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
+                            Console.WriteLine(Assets.Accounts[Login][i]);
 
-                            switch (input)
-                            {
-
-                                case "1":
-
-
-                                    Console.WriteLine("Privatkonto > SparKonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account1)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2} kr", Account1);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account1 = Account1 - moneyInput; Savings1 = Savings1 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Överföring Klar, Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings1, Account1);
-                                        Console.WriteLine("Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                            }
                         }
-                        else if (Login == 1)
+                        string input = Console.ReadLine();
+                        decimal moneyInput;
+                        switch (input)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Sparkonto");
-                            Console.WriteLine("2. Semesterkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Privatkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
+                            case "2":
+                                Console.WriteLine("Privatkonto => Sparkonto");
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][0] -= moneyInput;
+                                Assets.Funds[Login][1] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "3":
+                                if (Login == 0)
+                                {
+                                    Console.WriteLine("Ogiltig inmatning.");
+                                    Console.ReadKey();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Privatkonto => Semesterkonto");
                                     moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account2)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account2);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
+                                    Assets.Funds[Login][0] -= moneyInput;
+                                    Assets.Funds[Login][2] += moneyInput;
+                                    Console.WriteLine("Klart!");
+                                    Console.ReadKey();
+                                    FirstMenu();
+                                }
+                                break;
+                            case "4":
+                                if (Login == 0 || Login == 1)
+                                {
+                                    Console.WriteLine("Ogiltig inmatning.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Privatkonto => Matkonto");
+                                    moneyInput = decimal.Parse(Console.ReadLine());
+                                    Assets.Funds[Login][0] -= moneyInput;
+                                    Assets.Funds[Login][3] += moneyInput;
+                                    Console.ReadKey();
+                                    FirstMenu();
+                                }
+                                break;
+                            case "5":
+                                if (Login == 0 || Login == 1 || Login == 2)
+                                {
+                                    Console.WriteLine("Ogiltig inmatning.");
+                                }
 
-                                        Account2 = Account2 - moneyInput; Savings2 = Savings2 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings2, Account2);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
+                                else
+                                {
+                                    Console.WriteLine("Privatkonto => {0}", Assets.Accounts[Login][4]);
+                                    moneyInput = decimal.Parse(Console.ReadLine());
+                                    Assets.Funds[Login][0] -= moneyInput;
+                                    Assets.Funds[Login][4] += moneyInput;
+                                    Console.WriteLine("Klart!");
+                                    Console.ReadKey();
+                                    FirstMenu();
 
-                                case "2":
-                                    Console.WriteLine("Privatkonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account2)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account2);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account2 = Account2 - moneyInput; Vacation2 = Vacation2 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation2, Account2);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
-                        }
-                        else if (Login == 2)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Sparkonto");
-                            Console.WriteLine("2. Semesterkonto");
-                            Console.WriteLine("3. Matkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Privatkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account3 = Account3 - moneyInput; Savings3 = Savings3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings3, Account3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
+                                }
+                                break;
 
-                                case "2":
-                                    Console.WriteLine("Privatkonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account3 = Account3 - moneyInput; Vacation3 = Vacation3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation3, Account3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                                case "3":
-                                    Console.WriteLine("Privatkonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account3 = Account3 - moneyInput; Food3 = Food3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food3, Account3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Sparkonto");
-                            Console.WriteLine("2. Semesterkonto");
-                            Console.WriteLine("3. Matkonto");
-                            Console.WriteLine("4. Gitarrkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Privatkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account4 = Account4 - moneyInput; Savings4 = Savings4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, Account4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                                case "2":
-                                    Console.WriteLine("Privatkonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-
-                                        Account4 = Account4 - moneyInput; Savings4 = Savings4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, Account4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                                case "3":
-                                    Console.WriteLine("Privatkonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account4 = Account4 - moneyInput; Food4 = Food4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food4, Account4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("Privatkonto > Gitarrkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account4 = Account4 - moneyInput; GuitarAccount4 = GuitarAccount4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Gitarrkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, GuitarAccount4, Account4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Sparkonto");
-                            Console.WriteLine("2. Semesterkonto");
-                            Console.WriteLine("3. Matkonto");
-                            Console.WriteLine("4. Garnkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Privatkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-
-
-                                        Account5 = Account5 - moneyInput; Savings5 = Savings5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings5, Account5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                                case "2":
-                                    Console.WriteLine("Privatkonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account5 = Account5 - moneyInput; Vacation5 = Vacation5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Account5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                                case "3":
-                                    Console.WriteLine("Privatkonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account5 = Account5 - moneyInput; Food4 = Food4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food5, Account5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("Privatkonto > Garnkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Account5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account5 = Account5 - moneyInput; Yarn5 = Yarn5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Garnkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Yarn5, Account5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
                         }
                     }
                     else if (index == 1)
                     {
-                        if (Login == 0)
+                        Console.WriteLine("Välj ett konto att överföra till:");
+                        for (int i = 0; i < Assets.Accounts[Login].Length; i++)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
 
-                                case "1":
-                                    Console.WriteLine("SparKonto > PrivatKonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings1)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account1);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Account1 = Account1 + moneyInput; Savings1 = Savings1 - moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account1, Savings1);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-
-                            }
-
-
+                            Console.WriteLine(Assets.Accounts[Login][i]);
                         }
-                        else if (Login == 1)
+                        string? input = Console.ReadLine();
+                        decimal moneyInput;
+                        switch (input)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Semesterkonto");
-
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-
-                                case "1":
-                                    Console.WriteLine("SparKonto > PrivatKonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
+                            case "1":
+                                Console.WriteLine("Sparkonto => Privatkonto");
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][1] -= moneyInput;
+                                Assets.Funds[Login][0] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "2":
+                                Console.WriteLine("Ogiltig Inmatning");
+                                Console.ReadKey();
+                                break;
+                            case "3":
+                                if (Login == 0)
+                                {
+                                    Console.WriteLine("Ogiltig inmatning");
+                                    Console.ReadKey();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Sparkonto => Semesterkonto");
+                                    Console.Write("Summa: ");
                                     moneyInput = decimal.Parse(Console.ReadLine());
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings2)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings2);
-                                        Console.ReadKey();
-                                    }
-                                    Savings2 = Savings2 - moneyInput; Account2 = Account2 + moneyInput;
-                                    Console.WriteLine("Överför");
-                                    Thread.Sleep(500);
-                                    Console.WriteLine(". . .");
-                                    Thread.Sleep(1000);
-                                    Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account2, Savings2);
-                                    Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
+                                    Assets.Funds[Login][1] -= moneyInput;
+                                    Assets.Funds[Login][2] += moneyInput;
+                                    Console.WriteLine("Klart!");
                                     Console.ReadKey();
                                     FirstMenu();
-                                    break;
-
-                                case "2":
-                                    Console.WriteLine("SparKonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
+                                }
+                                break;
+                            case "4":
+                                if (Login == 0 || Login == 1)
+                                {
+                                    Console.WriteLine("Ogiltid inmatning");
+                                    Console.ReadKey();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Sparkonto => Matkonto");
+                                    Console.Write("Summa: ");
                                     moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings2)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings2);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings2 = Savings2 - moneyInput; Vacation2 = Vacation2 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation2, Savings2);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
+                                    Assets.Funds[Login][1] -= moneyInput;
+                                    Assets.Funds[Login][3] += moneyInput;
+                                    Console.WriteLine("Klart!");
+                                    Console.ReadKey();
+                                    FirstMenu();
+                                }
+                                break;
+                            case "5":
+                                if (Login == 0 || Login == 1 || Login == 2)
+                                {
+                                    Console.WriteLine("Ogiltig inmatning");
+                                    Console.ReadKey();
+                                }
 
-
-
-                            }
-
+                                else
+                                {
+                                    Console.WriteLine("{0} => {1}", Assets.Accounts[Login][1], Assets.Accounts[Login][4]);
+                                    Console.Write("Summa: ");
+                                    moneyInput = decimal.Parse(Console.ReadLine());
+                                    Assets.Funds[Login][1] -= moneyInput;
+                                    Assets.Funds[Login][4] += moneyInput;
+                                    Console.WriteLine("Klart!");
+                                    Console.ReadKey();
+                                    FirstMenu();
+                                }
+                                break;
                         }
-                        else if (Login == 2)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Semesterkonto");
-                            Console.WriteLine("3. Matkonto");
-
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-
-                                case "1":
-                                    Console.WriteLine("SparKonto > PrivatKonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings3 = Savings3 - moneyInput; Account3 = Account3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account3, Savings3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                                case "2":
-                                    Console.WriteLine("SparKonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings3 = Savings3 - moneyInput; Vacation3 = Vacation3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation3, Savings3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("SparKonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings3 = Savings3 - moneyInput; Food3 = Food3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food3, Savings3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                            }
-
-
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Semesterkonto");
-                            Console.WriteLine("3. Matkonto");
-                            Console.WriteLine("4. Gitarrkonto");
-
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-
-                                case "1":
-                                    Console.WriteLine("SparKonto > PrivatKonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings4 = Savings4 - moneyInput; Account4 = Account4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account4, Savings4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                                case "2":
-                                    Console.WriteLine("SparKonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings4 = Savings4 - moneyInput; Vacation4 = Vacation4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation4, Savings4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("SparKonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings4 = Savings4 - moneyInput; Food4 = Food4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food4, Savings4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("SparKonto > Gitarrkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings4 = Savings4 - moneyInput; GuitarAccount4 = GuitarAccount4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Gitarrkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, GuitarAccount4, Savings4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Semesterkonto");
-                            Console.WriteLine("3. Matkonto");
-                            Console.WriteLine("4. Garnkonto");
-
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-
-                                case "1":
-                                    Console.WriteLine("SparKonto > PrivatKonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings5 = Savings5 - moneyInput; Account5 = Account5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account5, Savings5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-                                case "2":
-                                    Console.WriteLine("SparKonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings5 = Savings5 - moneyInput; Vacation5 = Vacation5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Savings5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("SparKonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings5 = Savings5 - moneyInput; Food5 = Food5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt MAtkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food5, Savings5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("SparKonto > Garnkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Savings5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Savings5 = Savings5 - moneyInput; Yarn5 = Yarn5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Yarn5, Savings5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
 
 
 
-                        }
                     }
                     else if (index == 2)
                     {
-
-                        if (Login == 1)
+                        Console.WriteLine("Välj ett konto att överföra till:");
+                        for (int i = 0; i < Assets.Accounts[Login].Length; i++)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Sparkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Semesterkonto > Privatkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation2)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation2);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation2 = Vacation2 - moneyInput; Account2 = Account2 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account2, Vacation2);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Semesterkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation2)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation2);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation2 = Vacation2 - moneyInput; Savings2 = Savings2 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings2, Vacation2);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
 
-                            }
+                            Console.WriteLine(Assets.Accounts[Login][i]);
                         }
-                        else if (Login == 2)
+                        string? input = Console.ReadLine();
+                        decimal moneyInput;
+                        switch (input)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Sparkonto");
-                            Console.WriteLine("3. Matkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Semesterkonto > Privatkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation3 = Vacation3 - moneyInput; Account3 = Account3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account3, Vacation3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Semesterkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation3 = Vacation3 - moneyInput; Savings3 = Savings3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings3, Vacation3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("Semesterkonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation3 = Vacation3 - moneyInput; Food3 = Food3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food3, Vacation3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-
-                            }
-
+                            case "1":
+                                Console.WriteLine("Semesterkonto => Privatkonto");
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][2] -= moneyInput;
+                                Assets.Funds[Login][0] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "2":
+                                Console.WriteLine("Semesterkonto => Sparkonto");
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][2] -= moneyInput;
+                                Assets.Funds[Login][1] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "3":
+                                Console.WriteLine("Ogiltig inmatning");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "4":
+                                Console.WriteLine("Semesterkonto => Matkonto");
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][2] -= moneyInput;
+                                Assets.Funds[Login][3] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "5":
+                                Console.WriteLine("Semesterkonto => {0}", Assets.Accounts[Login][4]);
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][2] -= moneyInput;
+                                Assets.Funds[Login][4] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
                         }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Sparkonto");
-                            Console.WriteLine("3. Matkonto");
-                            Console.WriteLine("4. Gitarrkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Semesterkonto > Privatkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation4 = Vacation4 - moneyInput; Account4 = Account4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account4, Vacation4);
-
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Semesterkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation4 = Vacation4 - moneyInput; Savings4 = Savings4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, Vacation4);
-
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("Semesterkonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation4 = Vacation4 - moneyInput; Food4 = Food4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food4, Vacation4);
-
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("Semesterkonto > Gitarrkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation4 = Vacation4 - moneyInput; GuitarAccount4 = GuitarAccount4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Gitarrkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, GuitarAccount4, Vacation4);
-
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
-
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Sparkonto");
-                            Console.WriteLine("3. Matkonto");
-                            Console.WriteLine("4. Garnkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Semesterkonto > Privatkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation5 = Vacation5 - moneyInput; Account5 = Account5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account5, Vacation5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Semesterkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation5 = Vacation5 - moneyInput; Savings5 = Savings5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings5, Vacation5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("Semesterkonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation5 = Vacation5 - moneyInput; Food5 = Food5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food5, Vacation5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("Semesterkonto > Garnkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Vacation5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Vacation5 = Vacation5 - moneyInput; Yarn5 = Yarn5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Garnkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Yarn5, Vacation5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-
-
-                            }
-                        }
-
                     }
                     else if (index == 3)
                     {
-                        if (Login == 2)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Sparkonto");
-                            Console.WriteLine("3. Semesterkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Matkonto > Privatkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food3 = Food3 - moneyInput; Account3 = Account3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account3, Food3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Matkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food3 = Food3 - moneyInput; Savings3 = Savings3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings3, Food3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("Matkonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food3)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food3);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food3 = Food3 - moneyInput; Vacation3 = Vacation3 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation3, Food3);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Sparkonto");
-                            Console.WriteLine("3. Semesterkonto");
-                            Console.WriteLine("4. Gitarrkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Matkonto > Privatkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food4 = Food4 - moneyInput; Account4 = Account4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account4, Food4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Matkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food4 = Food4 - moneyInput; Savings4 = Savings4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, Food4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("Matkonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food4 = Food4 - moneyInput; Vacation4 = Vacation4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation4, Food4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("Matkonto > Gitarrkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food4 = Food4 - moneyInput; GuitarAccount4 = GuitarAccount4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Gitarrkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, GuitarAccount4, Food4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
-                        }
-                        else if (Login == 4)
+                        Console.WriteLine("Välj ett konto att överföra till:");
+                        for (int i = 0; i < Assets.Accounts[Login].Length; i++)
                         {
 
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Sparkonto");
-                            Console.WriteLine("3. Semesterkonto");
-                            Console.WriteLine("4. Garnkonto");
-                            string input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Matkonto > Privatkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food5 = Food5 - moneyInput; Account5 = Account5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account5, Food5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Matkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food5 = Food5 - moneyInput; Savings5 = Savings5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings5, Food5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("Matkonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food5 = Food5 - moneyInput; Vacation5 = Vacation5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Food5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("Matkonto > Garnkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Food5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food5 = Food5 - moneyInput; GuitarAccount4 = GuitarAccount4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Yarn5, Food5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
+                            Console.WriteLine(Assets.Accounts[Login][i]);
+                        }
+                        string? input = Console.ReadLine();
+                        decimal moneyInput;
+                        switch (input)
+                        {
+                            case "1":
+                                Console.WriteLine("Matkonto => Privatkonto");
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][3] -= moneyInput;
+                                Assets.Funds[Login][0] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
 
+                            case "2":
+                                Console.WriteLine("Matkonto => Sparkonto");
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][3] -= moneyInput;
+                                Assets.Funds[Login][1] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "3":
+                                Console.WriteLine("Matkonto => Semesterkonto");
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][3] -= moneyInput;
+                                Assets.Funds[Login][2] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "4":
+                                Console.WriteLine("Ogiltig inmatning");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "5":
+                                Console.WriteLine("Matkonto => {0}", Assets.Accounts[Login][4]);
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][3] -= moneyInput;
+                                Assets.Funds[Login][4] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
                         }
                     }
                     else if (index == 4)
                     {
-                        if (Login == 3)
+                        Console.WriteLine("Välj ett konto att överföra till:");
+                        for (int i = 0; i < Assets.Accounts[Login].Length; i++)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Sparkonto");
-                            Console.WriteLine("3. Semesterkonto");
-                            Console.WriteLine("4. Matkonto");
-                            string? input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Gitarrkonto > Privatkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > GuitarAccount4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", GuitarAccount4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        GuitarAccount4 = GuitarAccount4 - moneyInput; Account4 = Account4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account4, GuitarAccount4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Gitarrkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > GuitarAccount4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", GuitarAccount4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        GuitarAccount4 = GuitarAccount4 - moneyInput; Savings4 = Savings4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings4, GuitarAccount4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("Gitarrkonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > GuitarAccount4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", GuitarAccount4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        GuitarAccount4 = GuitarAccount4 - moneyInput; Vacation4 = Vacation4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation4, GuitarAccount4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("Gitarrkonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > GuitarAccount4)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", GuitarAccount4);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        GuitarAccount4 = GuitarAccount4 - moneyInput; Food4 = Food4 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Food4, GuitarAccount4);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Välj konto att överföra till:");
-                            Console.WriteLine("1. Privatkonto");
-                            Console.WriteLine("2. Sparkonto");
-                            Console.WriteLine("3. Semesterkonto");
-                            Console.WriteLine("4. Matkonto");
-                            string? input = Console.ReadLine();
-                            decimal moneyInput;
-                            switch (input)
-                            {
-                                case "1":
-                                    Console.WriteLine("Garnkonto > Privatkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Yarn5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Yarn5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Yarn5 = Yarn5 - moneyInput; Account5 = Account5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Privatkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Account5, Yarn5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Garnkonto > Sparkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Yarn5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Yarn5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Yarn5 = Yarn5 - moneyInput; Savings5 = Savings5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Sparkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Savings5, Yarn5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "3":
-                                    Console.WriteLine("Garnkonto > Semesterkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Yarn5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Yarn5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Yarn5 = Yarn5 - moneyInput; Vacation5 = Vacation5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Semesterkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Yarn5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                                case "4":
-                                    Console.WriteLine("Garnkonto > Matkonto");
-                                    Console.WriteLine("Välj Belopp");
-                                    Console.Write("===>");
-                                    moneyInput = decimal.Parse(Console.ReadLine());
-                                    if (moneyInput > Yarn5)
-                                    {
-                                        Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Yarn5);
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        Food5 = Yarn5 - moneyInput; Food5 = Food5 + moneyInput;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(500);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Du har överfört {0:N2} kr till ditt Matkonto som nu har {1:N2} Kr. Summa kvar på kontot: {2:N2}", moneyInput, Vacation5, Yarn5);
-                                        Console.WriteLine("Överföring Klar, Tryck Enter för att återgå till huvudmeny");
-                                        Console.ReadKey();
-                                        FirstMenu();
-                                    }
-                                    break;
-                            }
-                        }
 
+                            Console.WriteLine(Assets.Accounts[Login][i]);
+                        }
+                        string? input = Console.ReadLine();
+                        decimal moneyInput;
+                        switch (input)
+                        {
+                            case "1":
+                                Console.WriteLine("{0} => Privatkonto", Assets.Accounts[Login][4]);
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][4] -= moneyInput;
+                                Assets.Funds[Login][0] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "2":
+                                Console.WriteLine("{0} => Sparkonto", Assets.Accounts[Login][4]);
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][4] -= moneyInput;
+                                Assets.Funds[Login][1] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "3":
+                                Console.WriteLine("{0} => Privatkonto", Assets.Accounts[Login][4]);
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][4] -= moneyInput;
+                                Assets.Funds[Login][2] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "4":
+                                Console.WriteLine("{0} => Privatkonto", Assets.Accounts[Login][4]);
+                                Console.Write("Summa: ");
+                                moneyInput = decimal.Parse(Console.ReadLine());
+                                Assets.Funds[Login][4] -= moneyInput;
+                                Assets.Funds[Login][3] += moneyInput;
+                                Console.WriteLine("Klart!");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                            case "5":
+                                Console.WriteLine("Ogiltig inmatning");
+                                Console.ReadKey();
+                                FirstMenu();
+                                break;
+                        }
                     }
-
-
-
                 }
 
                 if (index <= -1)
@@ -2324,10 +686,6 @@
             }
         } //Manages the actual transfers and removal of funds from one account and adding funds to a second one. 
 
-        public void TransferToOthers()
-        {
-
-        }
         public void Withdraw()
         {
             string[] user = { "Robert", "William", "Maria", "Neil", "Christina" };
@@ -2374,787 +732,136 @@
                 {
                     if (index == 0)
                     {
-                        if (Login == 0)
+                        Console.Clear();
+                        Console.WriteLine("Hur mycket pengar vill du ta ut?");
+                        Console.Write("===>");
+                        decimal moneyInput = decimal.Parse(Console.ReadLine());
+                        if (moneyInput > Assets.Funds[Login][0])
                         {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Account1)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account1);
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Account1 = Account1 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Account1);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-                            }
+                            Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Assets.Funds[Login][0]);
                             Console.ReadKey();
                         }
-                        else if (Login == 1)
+                        else
                         {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Account2)
+                            Console.Write("Pin:");
+                            string? pin = Console.ReadLine();
+                            if (pin == password[Login])
                             {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account2);
+                                Assets.Funds[Login][0] -= moneyInput;
+                                isTrue = false;
+                                Console.WriteLine("Överför");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Klart!");
                                 Console.ReadKey();
+                                FirstMenu();
                             }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Account2 = Account2 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot ", moneyInput, Account2);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-                            }
-
                         }
-                        else if (Login == 2)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Account3)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account3);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Account3 = Account3 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Account3);
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-                            }
-
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Account4)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account4);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Account4 = Account4 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Account4);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-                            }
-
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Account5)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Account5);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Account5 = Account5 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Account5);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-                            }
-
-                        }
-
                     }
                     else if (index == 1)
                     {
-                        if (Login == 0)
+                        Console.Clear();
+                        Console.WriteLine("Hur mycket pengar vill du ta ut?");
+                        Console.Write("===>");
+                        decimal moneyInput = decimal.Parse(Console.ReadLine());
+                        if (moneyInput > Assets.Funds[Login][1])
                         {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Savings1)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings1);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Savings1 = Savings1 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Savings1);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-                            }
+                            Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Assets.Funds[Login][1]);
                             Console.ReadKey();
-
                         }
-                        else if (Login == 1)
+                        else
                         {
-
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Savings2)
+                            Console.Write("Pin:");
+                            string? pin = Console.ReadLine();
+                            if (pin == password[Login])
                             {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings2);
+                                Assets.Funds[Login][1] -= moneyInput;
+                                isTrue = false;
+                                Console.WriteLine("Överför");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Klart!");
                                 Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Savings2 = Savings2 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Savings2);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
-                            }
-
-                        }
-                        else if (Login == 2)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Savings3)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings3);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Savings3 = Savings3 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Savings3);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
-                            }
-
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Savings4)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings4);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Savings4 = Savings4 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Savings4);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
-                            }
-
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Savings5)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Savings5);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Savings4 = Savings4 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Savings5);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
+                                FirstMenu();
                             }
                         }
                     }
                     else if (index == 2)
                     {
-
-                        if (Login == 1)
+                        Console.Clear();
+                        Console.WriteLine("Hur mycket pengar vill du ta ut?");
+                        Console.Write("===>");
+                        decimal moneyInput = decimal.Parse(Console.ReadLine());
+                        if (moneyInput > Assets.Funds[Login][2])
                         {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Vacation2)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation2);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Vacation2 = Vacation2 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Vacation2);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
-                            }
-
+                            Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Assets.Funds[Login][2]);
+                            Console.ReadKey();
                         }
-                        else if (Login == 2)
+                        else
                         {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Vacation3)
+                            Console.Write("Pin:");
+                            string? pin = Console.ReadLine();
+                            if (pin == password[Login])
                             {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation3);
+                                Assets.Funds[Login][2] -= moneyInput;
+                                isTrue = false;
+                                Console.WriteLine("Överför");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Klart!");
                                 Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Vacation3 = Vacation3 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Vacation3);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
-                            }
-
-                        }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Vacation4)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation4);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Vacation4 = Vacation4 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Vacation4);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
-                            }
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Vacation5)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Vacation5);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Vacation5 = Vacation5 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Vacation5);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
+                                FirstMenu();
                             }
                         }
                     }
                     else if (index == 3)
                     {
-                        if (Login == 2)
+                        Console.Clear();
+                        Console.WriteLine("Hur mycket pengar vill du ta ut?");
+                        Console.Write("===>");
+                        decimal moneyInput = decimal.Parse(Console.ReadLine());
+                        if (moneyInput > Assets.Funds[Login][3])
                         {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Food3)
+                            Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Assets.Funds[Login][0]);
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            Console.Write("Pin:");
+                            string? pin = Console.ReadLine();
+                            if (pin == password[Login])
                             {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food3);
+                                Assets.Funds[Login][3] -= moneyInput;
+                                isTrue = false;
+                                Console.WriteLine("Överför");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Klart!");
                                 Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Food3 = Food3 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Food3);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
+                                FirstMenu();
                             }
                         }
-                        else if (Login == 3)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Food4)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food4);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Food4 = Food4 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Food4);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
-                            }
-                        }
-                        else if (Login == 4)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Food5)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Food5);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Food5 = Food5 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Food5);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
-                            }
-                        }
-
                     }
                     else if (index == 4)
                     {
-                        if (Login == 3)
+                        Console.Clear();
+                        Console.WriteLine("Hur mycket pengar vill du ta ut?");
+                        Console.Write("===>");
+                        decimal moneyInput = decimal.Parse(Console.ReadLine());
+                        if (moneyInput > Assets.Funds[Login][4])
                         {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > GuitarAccount4)
-                            {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", GuitarAccount4);
-                                Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        GuitarAccount4 = GuitarAccount4 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, GuitarAccount4);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
-                            }
+                            Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Assets.Funds[Login][4]);
+                            Console.ReadKey();
                         }
-                        else if (Login == 4)
+                        else
                         {
-                            Console.Clear();
-                            Console.WriteLine("Hur mycket pengar vill du ta ut?");
-                            Console.Write("===>");
-                            decimal moneyInput = decimal.Parse(Console.ReadLine());
-                            if (moneyInput > Yarn5)
+                            Console.Write("Pin:");
+                            string? pin = Console.ReadLine();
+                            if (pin == password[Login])
                             {
-                                Console.WriteLine("Du har inte så mycket pengar på ditt konto! du har {0:N2}", Yarn5);
+                                Assets.Funds[Login][4] -= moneyInput;
+                                isTrue = false;
+                                Console.WriteLine("Överför");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Klart!");
                                 Console.ReadKey();
-                            }
-                            else
-                            {
-                                Console.Write("Pin: ");
-                                string pin = Console.ReadLine();
-                                while (isTrue)
-                                {
-                                    if (pin == password[Login])
-                                    {
-                                        Yarn5 = Yarn5 - moneyInput;
-                                        isTrue = false;
-                                        Console.WriteLine("Överför");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine(". . .");
-                                        Thread.Sleep(1000);
-                                        Console.WriteLine("Klart! du tog ut {0:N2} och har {1:N2} kvar på kontot", moneyInput, Yarn5);
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        FirstMenu();
-                                    }
-                                    else if (pin != password[Login])
-                                    {
-                                        Console.WriteLine("Fel pinkod! Försök igen");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                }
-
-                                Console.ReadKey();
+                                FirstMenu();
                             }
                         }
                     }
@@ -3187,13 +894,21 @@ public class Assets
             new string[] { "1. PrivatKonto", "2. Sparkonto", "3. Semesterkonto","4. Matkonto" },
             new string[] { "1. PrivatKonto", "2. Sparkonto", "3. Semesterkonto","4. Matkonto", "5. Gitarrkonto" },
             new string[] { "1. PrivatKonto", "2. Sparkonto", "3. Semesterkonto", "4. Matkonto", "5. Garnkonto" }
-
-
     };
+    protected static decimal[][] funds = new decimal[][]
+    {
+        new decimal[] { 25000, 101000}, //Robert
+        new decimal[] {50000, 125000,33000}, //William
+        new decimal[] {35000,150000,40000,5000}, //Maria
+        new decimal[]{40000,200000,45000,3000,23300}, //Neil
+        new decimal[]{120000,500000,300000,3000,1500} //Christina
+    };
+    public static decimal[][] Funds
+    {
+        get { return funds; }
+    }
     public static string[][] Accounts
     {
         get { return accounts; }
     }
 }
-
-

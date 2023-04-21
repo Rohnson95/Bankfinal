@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Robert\\.nuget\\packages\\": {}
+    "C:\\Users\\rober\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Robert\\source\\repos\\bankapp1.0-main\\TempBankV2.csproj",
+      "projectUniqueName": "C:\\Users\\rober\\documents\\projekt\\Bankfinal\\TempBankV2.csproj",
       "projectName": "TempBankV2",
-      "projectPath": "C:\\Users\\Robert\\source\\repos\\bankapp1.0-main\\TempBankV2.csproj",
-      "packagesPath": "C:\\Users\\Robert\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Robert\\source\\repos\\bankapp1.0-main\\obj\\",
+      "projectPath": "C:\\Users\\rober\\documents\\projekt\\Bankfinal\\TempBankV2.csproj",
+      "packagesPath": "C:\\Users\\rober\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rober\\documents\\projekt\\Bankfinal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Robert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rober\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
